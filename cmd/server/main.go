@@ -1,14 +1,17 @@
 package main
 
 import (
-	"fmt"
+	"log"
 	"net/http"
 
-	"github.com/gsklearn2025/go/01-http-server/internal/handler"
+	"github.com/gsklearn2025/go/01-http-server/internal/db"
+	"github.com/gsklearn2025/go/01-http-server/internal/router"
 )
 
 func main() {
-	fmt.Println("Hello Go")
-	http.HandleFunc("/", handler.HomeHandler)
-	http.ListenAndServe(":8080", nil)
+	db.Connect() // Initialize the database connection
+
+	router.RegisterRoutes()
+
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
