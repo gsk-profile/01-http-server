@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS audit_log (
+    id SERIAL PRIMARY KEY,
+    email VARCHAR(255) NOT NULL,
+    action VARCHAR(50) NOT NULL,
+    timestamp TIMESTAMP NOT NULL DEFAULT NOW(),
+    details TEXT
+);

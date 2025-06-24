@@ -9,4 +9,5 @@ import (
 func RegisterRoutes() {
 	http.HandleFunc("/", handler.HomeHandler)
 	http.HandleFunc("/auth/login", handler.LoginHandler)
+	http.HandleFunc("/auth/logout", handler.LogoutHandler)
 }

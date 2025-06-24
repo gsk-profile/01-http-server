@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS sessions (
+    id UUID PRIMARY KEY,
+    email VARCHAR(255) NOT NULL,
+    token VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT NOW(),
+    expires_at TIMESTAMP NOT NULL
+);
